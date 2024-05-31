@@ -28,7 +28,7 @@ class BasicDisassembler:
         code_sections = []
         if self.pe:
             for section in self.pe.sections:
-                if section.Name.startswith(b'.text'):  # Typically, .text section contains code
+                if section.Name.startswith(b'.text'): # womp womp
                     code_sections.append(section)
         return code_sections
 
