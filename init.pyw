@@ -148,13 +148,12 @@ class AssemblyHighlighter(QSyntaxHighlighter):
         self.highlighting_rules = []
 
         self.address_format = QTextCharFormat()
-        self.address_format.setForeground(QColor("#FF5733"))  # Orange color for addresses
+        self.address_format.setForeground(QColor("#FF5733"))  
 
         self.mnemonic_format = QTextCharFormat()
-        self.mnemonic_format.setForeground(QColor("#C70039"))  # Red color for mnemonics
-
+        self.mnemonic_format.setForeground(QColor("#C70039")) 
         self.operand_format = QTextCharFormat()
-        self.operand_format.setForeground(QColor("#900C3F"))  # Dark red color for operands
+        self.operand_format.setForeground(QColor("#900C3F"))
 
         keywords = ["mov", "add", "sub", "jmp", "call", "ret", "push", "pop"]
         for keyword in keywords:
