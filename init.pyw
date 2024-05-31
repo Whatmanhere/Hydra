@@ -182,7 +182,7 @@ class AssemblyHighlighter(QSyntaxHighlighter):
         operand_index = operand_expression.indexIn(text)
         while operand_index >= 0:
             length = operand_expression.matchedLength()
-            self.setFormat(operand_index + 2, length - 2, self.operand_format)  # Exclude the comma
+            self.setFormat(operand_index + 2, length - 2, self.operand_format)  # Exclude
             operand_index = operand_expression.indexIn(text, operand_index + length)
 
 class DisassemblerGUI(QMainWindow):
@@ -201,15 +201,15 @@ class DisassemblerGUI(QMainWindow):
     def initUI(self):
         self.setWindowTitle("dot64")
 
-        # Set the application icon
+        
         self.setWindowIcon(QIcon("assets/asm.png"))
 
-        # Central widget layout
+        
         central_widget = QWidget()
         self.setCentralWidget(central_widget)
         main_layout = QVBoxLayout(central_widget)
 
-        # Toolbar layout
+        
         toolbar_layout = QHBoxLayout()
         self.address_input = QLineEdit(self)
         self.address_input.setPlaceholderText("Enter address to disassemble (hex)")
@@ -227,11 +227,11 @@ class DisassemblerGUI(QMainWindow):
         toolbar_layout.addWidget(self.status_label)
         main_layout.addLayout(toolbar_layout)
 
-        # Main splitter layout
+        # Main 
         main_splitter = QSplitter(Qt.Vertical)
         main_layout.addWidget(main_splitter)
 
-        # Disassembly and Hex view (top three-quarters)
+        # Disassembly
         self.tabs = QTabWidget(self)
         main_splitter.addWidget(self.tabs)
 
@@ -250,7 +250,7 @@ class DisassemblerGUI(QMainWindow):
         self.functions_view.horizontalHeader().setSectionResizeMode(QHeaderView.Stretch)
         self.tabs.addTab(self.functions_view, "Functions")
 
-        # Output view (bottom quarter)
+        #
         self.output_view = QTextEdit(self)
         self.output_view.setReadOnly(True)
         main_splitter.addWidget(self.output_view)
@@ -267,7 +267,7 @@ class DisassemblerGUI(QMainWindow):
         self.populate_info_display()
         self.status_label.setText(f"Loaded: {self.file_path}")
 
-        # Update window title
+        
         file_name = os.path.basename(self.file_path)
         self.setWindowTitle(f"dot64 - {file_name}")
 
@@ -281,7 +281,7 @@ class DisassemblerGUI(QMainWindow):
         if (file_path, file_type) not in recent_files:
             recent_files.append((file_path, file_type))
         with open('recent_files.json', 'w') as f:
-            json.dump(recent_files[-10:], f)  # Keep only the last 10 entries
+            json.dump(recent_files[-10:], f) 
 
     def populate_info_display(self):
         if self.disassembler:
@@ -365,7 +365,7 @@ if __name__ == "__main__":
     startup_dialog.file_selected.connect(disassembler_gui.initialize_with_file)
 
     if startup_dialog.exec_() == QDialog.Accepted:
-        disassembler_gui.showMaximized()  # Open the window maximized
+        disassembler_gui.showMaximized()
         disassembler_gui.show()
 
     sys.exit(app.exec_())
