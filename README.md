@@ -7,6 +7,3 @@ some features:
 dumper
 custom layout that will help the user
 and more!!!
-to set dot64 up run setup.bat and after it says succesfully close the thing it opened and open open.bat
-enjoyy!!!
-Dot64 is a Opensource software
