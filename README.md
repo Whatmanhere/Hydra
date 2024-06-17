@@ -1,4 +1,4 @@
-# dot64
+# Hydra
 a good and opensource dissasembler for both 64 and 32 bits files
 dot 64 is a unique dissasembler only based on python
 dot64 is only made by 1 person in less than 24 hours
